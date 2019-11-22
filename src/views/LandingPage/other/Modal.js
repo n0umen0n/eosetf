@@ -56,7 +56,7 @@ Transition.displayName = "Transition";
 
   //const [classicModal, setClassicModal] = React.useState(false);
 
-  
+
 
 
 
@@ -66,15 +66,15 @@ Transition.displayName = "Transition";
 
 
   export default function Modal() {
-    
+
     //this.transfer = this.transfer.bind(this);
 
-   // connect(mapStateToProps, mapDispatchToProps) 
-  
+   // connect(mapStateToProps, mapDispatchToProps)
+
       //this.transfer = this.transfer.bind(this);
 
 
-     
+
 
 
   const classes = useStyles();
@@ -136,38 +136,11 @@ Transition.displayName = "Transition";
                   </DialogContent>
 
                   <DialogActions className={classes.modalFooter}>
-                    <Button color="primary"
-                      onClick={() => transfer() }>
-                      Transfer dApp
-                    </Button>
-                    <Button color="primary"
-                      onClick={() => transferedna() }>
-                      Transfer EDNA
-                    </Button>
-                    <Button color="primary"
-                      onClick={() => transferpeos() }>
-                      Transfer PEOS
-                    </Button>
-                    <Button color="primary"
-                      onClick={() => transferiq() }>
-                      Transfer IQ
-                    </Button>
-                    <Button color="primary"
-                      onClick={() => transfervigor() }>
-                      Transfer Vigor
-                    </Button>
-                    <Button
-                      //onClick={() => wrapperFunction() }
-                      
-                      color="danger"
-                      simple
-                    >
-                      Close
-                    </Button>
+
                   </DialogActions>
                 </Dialog>
               </div>
 
   );
-                
+
                 }

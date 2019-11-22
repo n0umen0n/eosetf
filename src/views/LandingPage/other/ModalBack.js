@@ -22,7 +22,6 @@ import Button from "components/CustomButtons/Button.js";
 import styles from "assets/jss/material-kit-react/views/componentsSections/javascriptStyles.js";
 
 import SliderExampleStepBack from './CalculatorBack';
-import SliderExampleStep from './Calculator';
 
 
 import { connect } from 'react-redux';
@@ -422,7 +421,7 @@ function transferedna() {
 
     //this.transfer = this.transfer.bind(this);
 
-    connect(mapStateToProps, mapDispatchToProps) 
+    connect(mapStateToProps, mapDispatchToProps)
 
       //this.transfer = this.transfer.bind(this);
 
@@ -443,7 +442,7 @@ function transferedna() {
                   onClick={() => setClassicModal(true)}
                 >
                   <LibraryBooks className={classes.icon} />
-                  Make EosETF
+                  Refund EosETF
                 </Button>
                 <Dialog
                   classes={{
@@ -483,38 +482,9 @@ function transferedna() {
                     </p>
                     <div style={{"height":"40px"}}></div>
 
-                    <SliderExampleStep />
+                    <SliderExampleStepBack />
 
                   </DialogContent>
-
-                  <DialogActions className={classes.modalFooter}>
-                    <Button color="primary"
-                      onClick={() => transfer() }>
-                      Transfer dApp
-                    </Button>
-                    <Button color="primary"
-                      onClick={() => transferedna() }>
-                      Transfer EDNA
-                    </Button>
-                    <Button color="primary"
-                      onClick={() => transferpeos() }>
-                      Transfer PEOS
-                    </Button>
-                    <Button color="primary"
-                      onClick={() => transferiq() }>
-                      Transfer IQ
-                    </Button>
-                    <Button color="primary"
-                      onClick={() => transfervigor() }>
-                      Transfer Vigor
-                    </Button>
-                    <Button
-                      color="danger"
-                      simple
-                    >
-                      Close
-                    </Button>
-                  </DialogActions>
                 </Dialog>
               </div>
 

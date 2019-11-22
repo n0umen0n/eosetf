@@ -34,30 +34,30 @@ import { ApiService } from '../../services';
       port:443,
       protocol:'https'
     });
-    
-    
+
+
     ScatterJS.connect('EOSETF', {network}).then(connected => {
       if(!connected) return console.error('no scatter');
-      
-    
+
+
       ScatterJS.login().then(id=> {
-    
+
         if(!id) return console.error('no identity');
-  
-        
+
+
         const rpc = new JsonRpc(network.fullhost());
         const junglivittt = ScatterJS.eos(network, Api, {rpc});
-    
+
         const account = ScatterJS.account('eos');
-  
+
         const { setUser } = this.props;
 
         //const account = ScatterJS.account('eos');
-    
-        setUser({ 
+
+        setUser({
         name: id.accounts[0].name,});
-        
-  
+
+
         junglivittt.transact({
           actions:[{
               account: 'eosetfeosetf',
@@ -81,13 +81,13 @@ import { ApiService } from '../../services';
             console.error('error: ', err);
         });
     });
-  
+
     //ScatterJS.logout();
     console.log ("loggedout");
-  
+
   });
 
-  
+
 
 
 
@@ -97,8 +97,8 @@ import { ApiService } from '../../services';
         this.transferdapp = this.transferdapp.bind(this);
         this.transferiq = this.transferiq.bind(this);
         this.transfervig = this.transfervig.bind(this);
-        
-       
+
+
 
          this.loadetna();
          this.loadvik();
@@ -119,7 +119,7 @@ this.lita();
       var intervalid = setInterval(() => {
         this.loadetna();
       }, 12000);
-    
+
       setTimeout (() => { clearInterval (intervalid);
       }, 24000);
      }
@@ -129,7 +129,7 @@ this.lita();
       var intervalid = setInterval(() => {
         this.loadvik();
       }, 12000);
-    
+
       setTimeout (() => { clearInterval (intervalid);
       }, 24000);
      }
@@ -138,7 +138,7 @@ this.lita();
       var intervalid = setInterval(() => {
         this.loadpeoz();
       }, 12000);
-    
+
       setTimeout (() => { clearInterval (intervalid);
       }, 24000);
      }
@@ -147,7 +147,7 @@ this.lita();
       var intervalid = setInterval(() => {
         this.loaddabb();
       }, 12000);
-    
+
       setTimeout (() => { clearInterval (intervalid);
       }, 12000);
      }
@@ -156,17 +156,17 @@ this.lita();
       var intervalid = setInterval(() => {
         this.loadikq();
       }, 12000);
-    
+
       setTimeout (() => { clearInterval (intervalid);
       }, 24000);
      }
-     
+
 */
 
     loadetna() {
 
       const { setUser ,user: { name } } = this.props;
-      
+
       return ApiService.getEtnabalance(name).then(user => {
         setUser({
           etnabalance: user.balance,
@@ -177,7 +177,7 @@ this.lita();
       loaddabb() {
 
         const { setUser ,user: { name } } = this.props;
-        
+
         return ApiService.getDabbbalance(name).then(user => {
           setUser({
             dabbbalance: user.balance,
@@ -188,7 +188,7 @@ this.lita();
         loadikq() {
 
           const { setUser ,user: { name } } = this.props;
-          
+
           return ApiService.getIkqbalance(name).then(user => {
             setUser({
               ikqbalance: user.balance,          });
@@ -198,7 +198,7 @@ this.lita();
           loadvik() {
 
             const { setUser ,user: { name } } = this.props;
-            
+
             return ApiService.getVikbalance(name).then(user => {
               setUser({
                 vikbalance: user.balance,
@@ -209,7 +209,7 @@ this.lita();
             loadpeoz() {
 
               const { setUser ,user: { name } } = this.props;
-              
+
               return ApiService.getPeozbalance(name).then(user => {
                 setUser({
                   peozbalance: user.balance,             });
@@ -222,13 +222,13 @@ this.lita();
 
       const { sliderValues } = this.state;
 
-   
+
       console.log ("vitt");
        //const { form } = this.state;
       // const { setUser } = this.props;
-       
+
        ScatterJS.plugins( new ScatterEOS() );
-       
+
        const network = ScatterJS.Network.fromJson({
          blockchain:'eos',
          chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
@@ -236,23 +236,23 @@ this.lita();
          port:443,
          protocol:'https'
        });
-     
+
       const rpc = new JsonRpc(network.fullhost());
-     
-     
+
+
       //ScatterJS.login().then(id=> {
-       
+
        //if(!id) return console.error('no identity');
-       
-    
-       
+
+
+
        //const rpc = new JsonRpc(network.fullhost());
        const junglivittt = ScatterJS.eos(network, Api, {rpc});
-     
+
        const account = ScatterJS.account('eos');
-     
-      
-    
+
+
+
           junglivittt.transact({
             actions:[{
                 account: 'ednatoken111',
@@ -280,23 +280,23 @@ this.lita();
           });
         // });
        //});
-    
+
        console.log ("pede");
-     
+
          }
-    
+
          transferdapp() {
 
 
           const { sliderValues } = this.state;
-    
-       
+
+
           console.log ("vitt");
            //const { form } = this.state;
           // const { setUser } = this.props;
-           
+
            ScatterJS.plugins( new ScatterEOS() );
-           
+
            const network = ScatterJS.Network.fromJson({
              blockchain:'eos',
              chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
@@ -304,23 +304,23 @@ this.lita();
              port:443,
              protocol:'https'
            });
-         
+
           const rpc = new JsonRpc(network.fullhost());
-         
-         
+
+
           //ScatterJS.login().then(id=> {
-           
+
            //if(!id) return console.error('no identity');
-           
-        
-           
+
+
+
            //const rpc = new JsonRpc(network.fullhost());
            const junglivittt = ScatterJS.eos(network, Api, {rpc});
-         
+
            const account = ScatterJS.account('eos');
-         
-              
-        
+
+
+
               junglivittt.transact({
                 actions:[{
                     account: 'dabbtoken111',
@@ -348,9 +348,9 @@ this.lita();
               });
             // });
            //});
-        
+
            console.log ("pede");
-         
+
              }
 
 
@@ -359,14 +359,14 @@ this.lita();
 
 
               const { sliderValues } = this.state;
-        
-           
+
+
               console.log ("vitt");
                //const { form } = this.state;
               // const { setUser } = this.props;
-               
+
                ScatterJS.plugins( new ScatterEOS() );
-               
+
                const network = ScatterJS.Network.fromJson({
                  blockchain:'eos',
                  chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
@@ -374,23 +374,23 @@ this.lita();
                  port:443,
                  protocol:'https'
                });
-             
+
               const rpc = new JsonRpc(network.fullhost());
-             
-             
+
+
               //ScatterJS.login().then(id=> {
-               
+
                //if(!id) return console.error('no identity');
-               
-            
-               
+
+
+
                //const rpc = new JsonRpc(network.fullhost());
                const junglivittt = ScatterJS.eos(network, Api, {rpc});
-             
+
                const account = ScatterJS.account('eos');
-             
-                  
-            
+
+
+
                   junglivittt.transact({
                     actions:[{
                         account: 'evertoken111',
@@ -418,9 +418,9 @@ this.lita();
                   });
                 // });
                //});
-            
+
                console.log ("pede");
-             
+
                  }
 
 
@@ -430,14 +430,14 @@ this.lita();
 
 
                   const { sliderValues } = this.state;
-            
-               
+
+
                   console.log ("vitt");
                    //const { form } = this.state;
                   // const { setUser } = this.props;
-                   
+
                    ScatterJS.plugins( new ScatterEOS() );
-                   
+
                    const network = ScatterJS.Network.fromJson({
                      blockchain:'eos',
                      chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
@@ -445,23 +445,23 @@ this.lita();
                      port:443,
                      protocol:'https'
                    });
-                 
+
                   const rpc = new JsonRpc(network.fullhost());
-                 
-                 
+
+
                   //ScatterJS.login().then(id=> {
-                   
+
                    //if(!id) return console.error('no identity');
-                   
-                
-                   
+
+
+
                    //const rpc = new JsonRpc(network.fullhost());
                    const junglivittt = ScatterJS.eos(network, Api, {rpc});
-                 
+
                    const account = ScatterJS.account('eos');
-                 
-                      
-                
+
+
+
                       junglivittt.transact({
                         actions:[{
                             account: 'peostoken111',
@@ -489,9 +489,9 @@ this.lita();
                       });
                     // });
                    //});
-                
+
                    console.log ("pede");
-                 
+
                      }
 
 
@@ -500,14 +500,14 @@ this.lita();
 
 
                       const { sliderValues } = this.state;
-                
-                   
+
+
                       console.log ("vitt");
                        //const { form } = this.state;
                       // const { setUser } = this.props;
-                       
+
                        ScatterJS.plugins( new ScatterEOS() );
-                       
+
                        const network = ScatterJS.Network.fromJson({
                          blockchain:'eos',
                          chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
@@ -515,23 +515,23 @@ this.lita();
                          port:443,
                          protocol:'https'
                        });
-                     
+
                       const rpc = new JsonRpc(network.fullhost());
-                     
-                     
+
+
                       //ScatterJS.login().then(id=> {
-                       
+
                        //if(!id) return console.error('no identity');
-                       
-                    
-                       
+
+
+
                        //const rpc = new JsonRpc(network.fullhost());
                        const junglivittt = ScatterJS.eos(network, Api, {rpc});
-                     
+
                        const account = ScatterJS.account('eos');
-                     
-                          
-                    
+
+
+
                           junglivittt.transact({
                             actions:[{
                                 account: 'vigotoken111',
@@ -559,9 +559,9 @@ this.lita();
                           });
                         // });
                        //});
-                    
+
                        console.log ("pede");
-                     
+
                          }
 
 
@@ -575,22 +575,22 @@ this.lita();
 
   handleChange = sliderValues => {
     this.setState({ sliderValues });
-    
+
    // const { setUser } = this.props;
 
     //const account = ScatterJS.account('eos');
-  
-    //setUser({ 
+
+    //setUser({
      //slaidivalue: sliderValues});
   };
 
- 
+
 
   render() {
 
     const { user: {name,etfbalance,peozbalance,ikqbalance,etnabalance,vikbalance,dabbbalance,
 
-      
+
       } } = this.props;
 
     const { sliderValues } = this.state;
@@ -618,49 +618,41 @@ this.lita();
         <br></br>
         {sliderValues[0]*100} IQ tokens.
         </div>
-        {(name)}{(etfbalance)}{(peozbalance)}{(ikqbalance)}{(etnabalance)}{(vikbalance)}{(dabbbalance)}
+        {(name)}{(etfbalance)}, {(peozbalance)}, {(ikqbalance)}, {(etnabalance)}, {(vikbalance)}, {(dabbbalance)}
+        <br></br>
         <Button
                       onClick={() => this.transferedna() }
-                      
-                      color="danger"
-                      simple
+                      color="primary"
                     >
                       edna
                     </Button>
                     <Button
                       onClick={() => this.transferdapp() }
-                      
-                      color="danger"
-                      simple
+
+                      color="primary"
                     >
                       dapp
                     </Button>
                     <Button
                       onClick={() => this.transferiq() }
-                      
-                      color="danger"
-                      simple
+                      color="primary"
                     >
                       iq
                     </Button>
                     <Button
                       onClick={() => this.transferpeos() }
-                      
-                      color="danger"
-                      simple
+                      color="primary"
                     >
                       peos
                     </Button>
                     <Button
                       onClick={() => this.transfervig() }
-                      
-                      color="danger"
-                      simple
+                      color="primary"
                     >
                       vig
                     </Button>
       </div>
-       
+
     );
   }
  }

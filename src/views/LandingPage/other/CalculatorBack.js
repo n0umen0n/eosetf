@@ -21,7 +21,7 @@ import { ApiService } from '../../services';
 
 
  class SliderExampleStepBack extends React.Component {
-  
+
   constructor(props) {
     super(props);
 
@@ -31,7 +31,7 @@ import { ApiService } from '../../services';
   loadetf() {
 
     const { setUser ,user: { name } } = this.props;
-    
+
     return ApiService.getEosetfbalance(name).then(user => {
       setUser({
         etfbalance: user.balance,
@@ -43,13 +43,13 @@ import { ApiService } from '../../services';
 
     const { sliderValues } = this.state;
 
-   
+
     console.log ("vitt");
      //const { form } = this.state;
     // const { setUser } = this.props;
-     
+
      ScatterJS.plugins( new ScatterEOS() );
-     
+
      const network = ScatterJS.Network.fromJson({
        blockchain:'eos',
        chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
@@ -57,23 +57,23 @@ import { ApiService } from '../../services';
        port:443,
        protocol:'https'
      });
-   
+
     const rpc = new JsonRpc(network.fullhost());
-   
-   
+
+
     //ScatterJS.login().then(id=> {
-     
+
      //if(!id) return console.error('no identity');
-     
-  
-     
+
+
+
      //const rpc = new JsonRpc(network.fullhost());
      const junglivittt = ScatterJS.eos(network, Api, {rpc});
-   
+
      const account = ScatterJS.account('eos');
-   
-    
-  
+
+
+
         junglivittt.transact({
           actions:[{
               account: 'eosetfeosetf',
@@ -101,7 +101,7 @@ import { ApiService } from '../../services';
         });
       // });
      //});
-  
+
      console.log ("pede");
 
   }
@@ -116,7 +116,7 @@ import { ApiService } from '../../services';
 
     const { user: {name,etfbalance,peozbalance,ikqbalance,etnabalance,vikbalance,dabbbalance,
 
-      
+
     } } = this.props;
 
     const { sliderValues } = this.state;
@@ -144,14 +144,13 @@ import { ApiService } from '../../services';
         <br></br>
         {sliderValues[0]*100*0.995} IQ tokens.
         </div>
-        {(name)}{(etfbalance)}{(peozbalance)}{(ikqbalance)}{(etnabalance)}{(vikbalance)}{(dabbbalance)}
+        {(name)}{(etfbalance)}, {(peozbalance)}, {(ikqbalance)}, {(etnabalance)}, {(vikbalance)}, {(dabbbalance)}
+        <br></br>
         <Button
                       onClick={() => this.transferetf() }
-                      
                       color="danger"
-                      simple
                     >
-                      eosetf
+                      Redemption
                     </Button>
       </div>
     );
