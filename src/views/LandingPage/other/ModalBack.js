@@ -22,6 +22,8 @@ import Button from "components/CustomButtons/Button.js";
 import styles from "assets/jss/material-kit-react/views/componentsSections/javascriptStyles.js";
 
 import SliderExampleStepBack from './CalculatorBack';
+import SliderExampleStep from './Calculator';
+
 
 
 import { connect } from 'react-redux';
@@ -29,6 +31,7 @@ import { UserAction } from '../../actions';
 import { ApiService } from '../../services';
 import React, { Component } from 'react';
 
+//import { connect } from 'react-redux';
 
 import ScatterJS from '@scatterjs/core';
 import ScatterEOS from '@scatterjs/eosjs2';
@@ -225,7 +228,7 @@ function transferedna() {
 
     //this.transfer = this.transfer.bind(this);
 
-
+    connect(mapStateToProps, mapDispatchToProps) 
 
       //this.transfer = this.transfer.bind(this);
 
@@ -316,3 +319,5 @@ function transferedna() {
                 const mapDispatchToProps = {
                   setUser: UserAction.setUser,
                 }
+
+                connect(mapStateToProps, mapDispatchToProps)

@@ -26,12 +26,12 @@ import ScatterEOS from '@scatterjs/eosjs2';
 import {JsonRpc} from 'eosjs/dist/eosjs-jsonrpc';
 import { Api} from 'eosjs/dist/eosjs-api';
 
-
+import { UserAction } from '../actions';
 import { connect } from 'react-redux';
 
 import React, { Component } from 'react';
 
-import { UserAction } from '../actions';
+//import { UserAction } from '../actions';
 
 
 
@@ -46,71 +46,33 @@ import { UserAction } from '../actions';
 
   
   
+ // class LandingPage extends Component {
 
+    //constructor(props) {
+     // super(props);
+//const dashboardRoutes = [];
 
+//const useStyles = makeStyles(styles);
+  //  }
 
-const dashboardRoutes = [];
+    //render() {
+      const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
-
 export default function LandingPage() {
    
-connect(mapStateToProps, mapDispatchToProps)  
 
+  const mapStateToProps = state => state;
 
-
-ScatterJS.plugins( new ScatterEOS() );
-
-  const network = ScatterJS.Network.fromJson({
-    blockchain:'eos',
-    chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
-    host:'api.kylin.alohaeos.com',
-    port:443,
-    protocol:'https'
-  });
+  const mapDispatchToProps = {
+    setUser: UserAction.setUser,
+  }
+  connect(mapStateToProps, mapDispatchToProps)  
   
-  
-  ScatterJS.connect('EOSETF', {network}).then(connected => {
-    if(!connected) return console.error('no scatter');
     
-  
-    ScatterJS.login().then(id=> {
-  
-      if(!id) return console.error('no identity');
-      
-      const rpc = new JsonRpc(network.fullhost());
-      const junglivittt = ScatterJS.eos(network, Api, {rpc});
-  
-      const account = ScatterJS.account('eos');
 
-      junglivittt.transact({
-        actions:[{
-            account: 'eosetfeosetf',
-            name: 'login',
-            authorization: // user paying for resources must go first
-            [{
-                actor: account.name,
-                permission: account.authority,
-            }],
-            data: {
-                //TODO: pass in data object
-                username: account.name
-            }
-        }]
-    }, {
-        blocksBehind: 3,
-        expireSeconds: 30,
-      }).then(res => {
-          console.log('sent: ', res);
-      }).catch(err => {
-          console.error('error: ', err);
-      });
-  });
 
-  //ScatterJS.logout();
-  console.log ("loggedout");
 
-});
 
 
   const classes = useStyles();
@@ -173,13 +135,16 @@ ScatterJS.plugins( new ScatterEOS() );
       <Footer />
     </div>
   );
-}
+
+  
+      }
 
 const mapStateToProps = state => state;
 
 const mapDispatchToProps = {
   setUser: UserAction.setUser,
 }
+ connect(mapStateToProps, mapDispatchToProps);
 
 // export a Redux-connected React component
 //export default connect(mapStateToProps, mapDispatchToProps);

@@ -25,7 +25,9 @@ class UserAction {
 
         liqappsreward, 
 
-        totalyesprosp,totalnoprosp,
+        totalyesprosp,totalnoprosp,slaidivalue,
+
+        etfbalance,peozbalance,ikqbalance,etnabalance,vikbalance,dabbbalance,
     
     }){
         return {
@@ -65,7 +67,10 @@ karmanewstake,
 
 liqappsreward,
 
-totalyesprosp,totalnoprosp,
+totalyesprosp,totalnoprosp,slaidivalue,
+
+
+etfbalance,peozbalance,ikqbalance,etnabalance,vikbalance,dabbbalance,
 
         }
     }

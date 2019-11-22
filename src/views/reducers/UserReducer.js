@@ -62,6 +62,9 @@ consortiumreward:0,
 totalyesprosp:0,
 totalnoprosp:0,
 
+slaidivalue:1,
+
+etfbalance:0,peozbalance:0,ikqbalance:0,etnabalance:0,vikbalance:0,dabbbalance:0,
 
 //karmanewstake:0,
 }
@@ -76,11 +79,42 @@ export default function (state = initialState, action) {
                 name: typeof action.name === "undefined" ?
                     state.name : action.name,
                 
+
+
+                    etnabalance: typeof action.etnabalance === "undefined" ?
+                    state.etnabalance : parseInt(action.etnabalance),
+
+
+                    ikqbalance: typeof action.ikqbalance === "undefined" ?
+                    state.ikqbalance : parseInt(action.ikqbalance),
+
+
+                    peozbalance: typeof action.peozbalance === "undefined" ?
+                    state.peozbalance : parseInt(action.peozbalance),
+
+
+                    vikbalance: typeof action.vikbalance === "undefined" ?
+                    state.vikbalance : parseInt(action.vikbalance),
+
+                    dabbbalance: typeof action.dabbbalance === "undefined" ?
+                    state.dabbbalance : parseInt(action.dabbbalance),
+
+
+                    etfbalance: typeof action.etfbalance === "undefined" ?
+                    state.etfbalance : parseInt(action.etfbalance),
+
+
+
+
+
                     totalcirculation: typeof action.totalcirculation === "undefined" ?
                     state.totalcirculation : parseInt(action.totalcirculation),
                     
                     totalsignals: parseInt(state.totalcirculation / 50000),
     
+                  
+                    slaidivalue: typeof action.slaidivalue === "undefined" ?
+                    state.slaidivalue : parseInt(action.slaidivalue),
 
                     
                     //karmanewstake: typeof action.karmanewstake === "undefined" ?

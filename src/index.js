@@ -9,7 +9,7 @@ import "assets/scss/material-kit-react.scss?v=1.8.0";
 // pages for this product
 import LandingPage from "views/LandingPage/LandingPage.js";
 import About from "views/About/About.js";
-
+import App from "views/LandingPage/App";
 
 import { Provider } from 'react-redux';
 import store from '../src/views/store';

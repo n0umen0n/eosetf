@@ -41,6 +41,155 @@ import JsSignatureProvider from '../../../node_modules/eosjs/dist/eosjs-jssig';
 */
 class ApiService{
 
+
+    
+    static async getDabbbalance (username) {
+        try{
+            const rpc = new JsonRpc('https://api.kylin.alohaeos.com:443');
+            //const rpc = new JsonRpc(process.env.REACT_APP_EOS_HTTP_ENDPOINT);
+            const result = await rpc.get_table_rows({
+                "json": true,
+                "code": 'dabbtoken111', //process.env.REACT_APP_EOS_CONTRACT_DABB,
+                "scope": 'eosetftestac',
+                "table": "accounts",
+                "limit": 1,
+                
+                
+                
+            });
+            return result.rows[0];
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    static async getPeozbalance (username) {
+        try{
+            const rpc = new JsonRpc(process.env.REACT_APP_EOS_HTTP_ENDPOINT);
+            const result = await rpc.get_table_rows({
+                "json": true,
+                "code": process.env.REACT_APP_EOS_CONTRACT_PEOZ,
+                "scope": 'eosetftestac',
+                "table": 'accounts',
+                "limit": 1,
+                
+                
+                
+            });
+            return result.rows[0];
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    static async getIkqbalance (username) {
+        try{
+            const rpc = new JsonRpc(process.env.REACT_APP_EOS_HTTP_ENDPOINT);
+            const result = await rpc.get_table_rows({
+                "json": true,
+                "code": process.env.REACT_APP_EOS_CONTRACT_IKQ,
+                "scope": 'eosetftestac',
+                "table": "accounts",
+                "limit": 1,
+                
+                
+                
+            });
+            return result.rows[0];
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    static async getVikbalance (username) {
+        try{
+            const rpc = new JsonRpc(process.env.REACT_APP_EOS_HTTP_ENDPOINT);
+            const result = await rpc.get_table_rows({
+                "json": true,
+                "code": process.env.REACT_APP_EOS_CONTRACT_VIK,
+                "scope": 'eosetftestac',
+                "table": "accounts",
+                "limit": 1,
+                
+                
+                
+            });
+            return result.rows[0];
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    static async getEtnabalance (username) {
+        try{
+            const rpc = new JsonRpc(process.env.REACT_APP_EOS_HTTP_ENDPOINT);
+            const result = await rpc.get_table_rows({
+                "json": true,
+                "code": process.env.REACT_APP_EOS_CONTRACT_ETNA,
+                "scope": 'eosetftestac',
+                "table": "accounts",
+                "limit": 1,
+                
+                
+                
+            });
+            return result.rows[0];
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    static async getEosetfbalance (username) {
+        try{
+            const rpc = new JsonRpc(process.env.REACT_APP_EOS_HTTP_ENDPOINT);
+            const result = await rpc.get_table_rows({
+                "json": true,
+                "code": process.env.REACT_APP_EOS_CONTRACT_NAME,
+                "scope": 'eosetftestac',
+                "table": "accounts",
+                "limit": 1,
+                
+                
+                
+            });
+            return result.rows[0];
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     static async getTotalStakedConsortium (username) {
         try{
             const rpc = new JsonRpc(process.env.REACT_APP_EOS_HTTP_ENDPOINT);
