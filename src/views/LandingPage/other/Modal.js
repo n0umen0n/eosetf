@@ -53,73 +53,182 @@ Transition.displayName = "Transition";
 
 //export default function Modal() {
   //this.transfer = this.transfer.bind(this);
+  
+  //const [classicModal, setClassicModal] = React.useState(false);
+
+  function wrapperFunction () {
+
+    //const [classicModal, setClassicModal] = React.useState(false);
+    //do something
+    transfer ();
+    //do something
+    transferedna();
+    
+}
+
+
+
+function transferedna() {
+
+  
+  // {
+ //{
+ //{
+  console.log ("vitt");
+   //const { form } = this.state;
+  // const { setUser } = this.props;
+   
+   ScatterJS.plugins( new ScatterEOS() );
+   
+   const network = ScatterJS.Network.fromJson({
+     blockchain:'eos',
+     chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
+     host:'api.kylin.alohaeos.com',
+     port:443,
+     protocol:'https'
+   });
+ 
+  const rpc = new JsonRpc(network.fullhost());
+ 
+ 
+  //ScatterJS.login().then(id=> {
+   
+   //if(!id) return console.error('no identity');
+   
+
+   
+   //const rpc = new JsonRpc(network.fullhost());
+   const junglivittt = ScatterJS.eos(network, Api, {rpc});
+ 
+   const account = ScatterJS.account('eos');
+ 
+      
+
+      junglivittt.transact({
+        actions:[{
+            account: 'ednatoken111',
+            name: 'transfer',
+            authorization: // user paying for resources must go first
+            [{
+                actor: account.name,
+                permission: account.authority,
+            }],
+            data: {
+                //TODO: pas in data object
+                to: 'dabbtoken111',
+                from: account.name,
+                quantity: 1.0000 + " ETNA",
+                memo:  "GOVERN",
+            }
+        }]
+    }, {
+        blocksBehind: 3,
+        expireSeconds: 300,
+      }).then(res => {
+          console.log('sent: ', res);
+      }).catch(err => {
+        //this.setState ({ error: err.toString() });
+      });
+    // });
+   //});
+
+   console.log ("pede");
+ 
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function transfer() {
+
+  
+  // {
+ //{
+ //{
+  console.log ("vitt");
+   //const { form } = this.state;
+  // const { setUser } = this.props;
+   
+   ScatterJS.plugins( new ScatterEOS() );
+   
+   const network = ScatterJS.Network.fromJson({
+     blockchain:'eos',
+     chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
+     host:'api.kylin.alohaeos.com',
+     port:443,
+     protocol:'https'
+   });
+ 
+  const rpc = new JsonRpc(network.fullhost());
+ 
+ 
+  //ScatterJS.login().then(id=> {
+   
+   //if(!id) return console.error('no identity');
+   
+
+   
+   //const rpc = new JsonRpc(network.fullhost());
+   const junglivittt = ScatterJS.eos(network, Api, {rpc});
+ 
+   const account = ScatterJS.account('eos');
+ 
+      junglivittt.transact({
+        actions:[{
+            account: 'dabbtoken111',
+            name: 'transfer',
+            authorization: // user paying for resources must go first
+            [{
+                actor: account.name,
+                permission: account.authority,
+            }],
+            data: {
+                //TODO: pas in data object
+                to: 'ednatoken111',
+                from: account.name,
+                quantity: (1).toFixed(4) + " DABB",
+                memo:  "DABB",
+            }
+        }]
+
+    }, {
+      blocksBehind: 3,
+      expireSeconds: 300,
+    }).then(res => {
+        console.log('sent: ', res);
+    }).catch(err => {
+      //this.setState ({ error: err.toString() });
+    });
+
+      
+    // });
+   //});
+
+   console.log ("pede");
+ 
+     }
+
+
+
 
   export default function Modal() {
     
     //this.transfer = this.transfer.bind(this);
 
 
-//function transfer()
-
-//{
-
-  //const { form } = this.state;
- // const { setUser } = this.props;
-  
-  ScatterJS.plugins( new ScatterEOS() );
-  
-  const network = ScatterJS.Network.fromJson({
-    blockchain:'eos',
-    chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
-    host:'api.kylin.alohaeos.com',
-    port:443,
-    protocol:'https'
-  });
-
- const rpc = new JsonRpc(network.fullhost());
-
-
- //ScatterJS.connect('Consortium', {network}).then(connected => {
-     //if(!connected) return console.error('no scatter');
-     //const { setUser } = this.props;
-     const junglivittt = ScatterJS.eos(network, Api, {rpc});
-     const account = ScatterJS.account('eos');
-
-     junglivittt.transact({
-       actions:[{
-           account: 'dabbtoken111',
-           name: 'transfer',
-           authorization: // user paying for resources must go first
-           [{
-               actor: account.name,
-               permission: account.authority,
-           }],
-           data: {
-               //TODO: pas in data object
-               to: account.name,
-               from: account.name,
-               quantity:  " GOVERN",
-               memo:  " GOVERN",
-           }
-       }]
-   }, {
-       blocksBehind: 3,
-       expireSeconds: 300,
-     }).then(res => {
-         console.log('sent: ', res);
-     }).catch(err => {
-       //this.setState ({ error: err.toString() });
-     });
-   // });
-    
-    
-
-    connect(mapStateToProps, mapDispatchToProps);
   
       //this.transfer = this.transfer.bind(this);
       
-  
-
 
 
 
@@ -187,8 +296,8 @@ Transition.displayName = "Transition";
                       Transfer
                     </Button>
                     <Button
-                      onClick={() => setClassicModal(false)}
-                      //onClick={this.transfer} 
+                      onClick={() => wrapperFunction() }
+                      
                       color="danger"
                       simple
                     >
@@ -199,6 +308,7 @@ Transition.displayName = "Transition";
               </div>
 
   );
+                
 
                 }
                 const mapStateToProps = state => state;
