@@ -23,10 +23,6 @@ import styles from "assets/jss/material-kit-react/views/componentsSections/javas
 
 import SliderExampleStepBack from './CalculatorBack';
 import SliderExampleStep from './Calculator';
-<<<<<<< HEAD
-
-=======
->>>>>>> 5dc71da9cf4b7e334d1f1ab7f12794c4e11dbe50
 
 
 import { connect } from 'react-redux';
