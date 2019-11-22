@@ -58,6 +58,211 @@ Transition.displayName = "Transition";
   //const [classicModal, setClassicModal] = React.useState(false);
 
 
+  function transferpeos() {
+
+
+    // {
+   //{
+   //{
+    console.log ("vitt");
+     //const { form } = this.state;
+    // const { setUser } = this.props;
+
+     ScatterJS.plugins( new ScatterEOS() );
+
+     const network = ScatterJS.Network.fromJson({
+       blockchain:'eos',
+       chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
+       host:'api.kylin.alohaeos.com',
+       port:443,
+       protocol:'https'
+     });
+
+    const rpc = new JsonRpc(network.fullhost());
+
+
+    //ScatterJS.login().then(id=> {
+
+     //if(!id) return console.error('no identity');
+
+
+
+     //const rpc = new JsonRpc(network.fullhost());
+     const junglivittt = ScatterJS.eos(network, Api, {rpc});
+
+     const account = ScatterJS.account('eos');
+
+
+
+        junglivittt.transact({
+          actions:[{
+              account: 'ednatoken111',
+              name: 'transfer',
+              authorization: // user paying for resources must go first
+              [{
+                  actor: account.name,
+                  permission: account.authority,
+              }],
+              data: {
+                  //TODO: pas in data object
+                  to: 'dabbtoken111',
+                  from: account.name,
+                  quantity: 1.0000 + " ETNA",
+                  memo:  "GOVERN",
+              }
+          }]
+      }, {
+          blocksBehind: 3,
+          expireSeconds: 300,
+        }).then(res => {
+            console.log('sent: ', res);
+        }).catch(err => {
+          //this.setState ({ error: err.toString() });
+        });
+      // });
+     //});
+
+     console.log ("pede");
+
+       }
+
+
+  function transferiq() {
+
+
+    // {
+   //{
+   //{
+    console.log ("vitt");
+     //const { form } = this.state;
+    // const { setUser } = this.props;
+
+     ScatterJS.plugins( new ScatterEOS() );
+
+     const network = ScatterJS.Network.fromJson({
+       blockchain:'eos',
+       chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
+       host:'api.kylin.alohaeos.com',
+       port:443,
+       protocol:'https'
+     });
+
+    const rpc = new JsonRpc(network.fullhost());
+
+
+    //ScatterJS.login().then(id=> {
+
+     //if(!id) return console.error('no identity');
+
+
+
+     //const rpc = new JsonRpc(network.fullhost());
+     const junglivittt = ScatterJS.eos(network, Api, {rpc});
+
+     const account = ScatterJS.account('eos');
+
+
+
+        junglivittt.transact({
+          actions:[{
+              account: 'ednatoken111',
+              name: 'transfer',
+              authorization: // user paying for resources must go first
+              [{
+                  actor: account.name,
+                  permission: account.authority,
+              }],
+              data: {
+                  //TODO: pas in data object
+                  to: 'dabbtoken111',
+                  from: account.name,
+                  quantity: 1.0000 + " ETNA",
+                  memo:  "GOVERN",
+              }
+          }]
+      }, {
+          blocksBehind: 3,
+          expireSeconds: 300,
+        }).then(res => {
+            console.log('sent: ', res);
+        }).catch(err => {
+          //this.setState ({ error: err.toString() });
+        });
+      // });
+     //});
+
+     console.log ("pede");
+
+       }
+
+
+  function transfervigor() {
+
+
+    // {
+   //{
+   //{
+    console.log ("vitt");
+     //const { form } = this.state;
+    // const { setUser } = this.props;
+
+     ScatterJS.plugins( new ScatterEOS() );
+
+     const network = ScatterJS.Network.fromJson({
+       blockchain:'eos',
+       chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
+       host:'api.kylin.alohaeos.com',
+       port:443,
+       protocol:'https'
+     });
+
+    const rpc = new JsonRpc(network.fullhost());
+
+
+    //ScatterJS.login().then(id=> {
+
+     //if(!id) return console.error('no identity');
+
+
+
+     //const rpc = new JsonRpc(network.fullhost());
+     const junglivittt = ScatterJS.eos(network, Api, {rpc});
+
+     const account = ScatterJS.account('eos');
+
+
+
+        junglivittt.transact({
+          actions:[{
+              account: 'ednatoken111',
+              name: 'transfer',
+              authorization: // user paying for resources must go first
+              [{
+                  actor: account.name,
+                  permission: account.authority,
+              }],
+              data: {
+                  //TODO: pas in data object
+                  to: 'dabbtoken111',
+                  from: account.name,
+                  quantity: 1.0000 + " ETNA",
+                  memo:  "GOVERN",
+              }
+          }]
+      }, {
+          blocksBehind: 3,
+          expireSeconds: 300,
+        }).then(res => {
+            console.log('sent: ', res);
+        }).catch(err => {
+          //this.setState ({ error: err.toString() });
+        });
+      // });
+     //});
+
+     console.log ("pede");
+
+       }
 
 function transferedna() {
 
@@ -128,213 +333,6 @@ function transferedna() {
      }
 
 
-
-
-function transferiq() {
-
-
-       // {
-      //{
-      //{
-       console.log ("vitt");
-        //const { form } = this.state;
-       // const { setUser } = this.props;
-
-        ScatterJS.plugins( new ScatterEOS() );
-
-        const network = ScatterJS.Network.fromJson({
-          blockchain:'eos',
-          chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
-          host:'api.kylin.alohaeos.com',
-          port:443,
-          protocol:'https'
-        });
-
-       const rpc = new JsonRpc(network.fullhost());
-
-
-       //ScatterJS.login().then(id=> {
-
-        //if(!id) return console.error('no identity');
-
-
-
-        //const rpc = new JsonRpc(network.fullhost());
-        const junglivittt = ScatterJS.eos(network, Api, {rpc});
-
-        const account = ScatterJS.account('eos');
-
-
-
-           junglivittt.transact({
-             actions:[{
-                 account: 'ednatoken111',
-                 name: 'transfer',
-                 authorization: // user paying for resources must go first
-                 [{
-                     actor: account.name,
-                     permission: account.authority,
-                 }],
-                 data: {
-                     //TODO: pas in data object
-                     to: 'dabbtoken111',
-                     from: account.name,
-                     quantity: 1.0000 + " ETNA",
-                     memo:  "GOVERN",
-                 }
-             }]
-         }, {
-             blocksBehind: 3,
-             expireSeconds: 300,
-           }).then(res => {
-               console.log('sent: ', res);
-           }).catch(err => {
-             //this.setState ({ error: err.toString() });
-           });
-         // });
-        //});
-
-        console.log ("pede");
-
-          }
-
-
-          function transferpeos() {
-
-
-            // {
-           //{
-           //{
-            console.log ("vitt");
-             //const { form } = this.state;
-            // const { setUser } = this.props;
-
-             ScatterJS.plugins( new ScatterEOS() );
-
-             const network = ScatterJS.Network.fromJson({
-               blockchain:'eos',
-               chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
-               host:'api.kylin.alohaeos.com',
-               port:443,
-               protocol:'https'
-             });
-
-            const rpc = new JsonRpc(network.fullhost());
-
-
-            //ScatterJS.login().then(id=> {
-
-             //if(!id) return console.error('no identity');
-
-
-
-             //const rpc = new JsonRpc(network.fullhost());
-             const junglivittt = ScatterJS.eos(network, Api, {rpc});
-
-             const account = ScatterJS.account('eos');
-
-
-
-                junglivittt.transact({
-                  actions:[{
-                      account: 'ednatoken111',
-                      name: 'transfer',
-                      authorization: // user paying for resources must go first
-                      [{
-                          actor: account.name,
-                          permission: account.authority,
-                      }],
-                      data: {
-                          //TODO: pas in data object
-                          to: 'dabbtoken111',
-                          from: account.name,
-                          quantity: 1.0000 + " ETNA",
-                          memo:  "GOVERN",
-                      }
-                  }]
-              }, {
-                  blocksBehind: 3,
-                  expireSeconds: 300,
-                }).then(res => {
-                    console.log('sent: ', res);
-                }).catch(err => {
-                  //this.setState ({ error: err.toString() });
-                });
-              // });
-             //});
-
-             console.log ("pede");
-
-               }
-
-
-    function transfervigor() {
-
-
-       // {
-      //{
-      //{
-       console.log ("vitt");
-        //const { form } = this.state;
-       // const { setUser } = this.props;
-
-        ScatterJS.plugins( new ScatterEOS() );
-
-        const network = ScatterJS.Network.fromJson({
-          blockchain:'eos',
-          chainId:'5fff1dae8dc8e2fc4d5b23b2c7665c97f9e9d8edf2b6485a86ba311c25639191',
-          host:'api.kylin.alohaeos.com',
-          port:443,
-          protocol:'https'
-        });
-
-       const rpc = new JsonRpc(network.fullhost());
-
-
-       //ScatterJS.login().then(id=> {
-
-        //if(!id) return console.error('no identity');
-
-
-
-        //const rpc = new JsonRpc(network.fullhost());
-        const junglivittt = ScatterJS.eos(network, Api, {rpc});
-
-        const account = ScatterJS.account('eos');
-
-
-
-           junglivittt.transact({
-             actions:[{
-                 account: 'ednatoken111',
-                 name: 'transfer',
-                 authorization: // user paying for resources must go first
-                 [{
-                     actor: account.name,
-                     permission: account.authority,
-                 }],
-                 data: {
-                     //TODO: pas in data object
-                     to: 'dabbtoken111',
-                     from: account.name,
-                     quantity: 1.0000 + " ETNA",
-                     memo:  "GOVERN",
-                 }
-             }]
-         }, {
-             blocksBehind: 3,
-             expireSeconds: 300,
-           }).then(res => {
-               console.log('sent: ', res);
-           }).catch(err => {
-             //this.setState ({ error: err.toString() });
-           });
-         // });
-        //});
-
-        console.log ("pede");
-
-          }
 
 
 
@@ -479,9 +477,8 @@ function transferiq() {
                     className={classes.modalBody}
                   >
                     <p>
-                      First choose how much EosETF you want to make. The calculator
-                      will show you how much of each token you need to transfer
-                      in order to make your chosen amount of EosETF.
+                      You can get your tokens refunded for a fee of 0.5%. blahblahblah
+                      blahblahblah blahblahblah.
                     </p>
                     <div style={{"height":"40px"}}></div>
 
