@@ -1,4 +1,4 @@
-
+import React, { Component } from 'react';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Button from './Button.js';
@@ -6,7 +6,8 @@ import Button from './Button.js';
 import Dashboard from "@material-ui/icons/WorkOutline";
 import Schedule from "@material-ui/icons/AccountBalance";
 import List from "@material-ui/icons/List";
-import  Modal from './Modal';
+import Modal from './Modal';
+import ModalBack from './ModalBack';
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -16,7 +17,7 @@ import styles from "assets/jss/material-kit-react/views/componentsSections/pills
 import { connect } from 'react-redux';
 import { UserAction } from '../../actions';
 import { ApiService } from '../../services';
-import React, { Component } from 'react';
+
 
 
 import ScatterJS from '@scatterjs/core';
@@ -34,7 +35,7 @@ import { Api} from 'eosjs/dist/eosjs-api';
 const useStyles = makeStyles(styles);
 
 export default function SectionPills() {
-  
+
   connect(mapStateToProps, mapDispatchToProps);
 
   const classes = useStyles();
@@ -78,6 +79,7 @@ export default function SectionPills() {
                         </small>
                         <br />
                         <Modal />
+                        <ModalBack />
                       </span>
                     )
                   }
