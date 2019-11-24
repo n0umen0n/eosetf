@@ -594,6 +594,16 @@ this.lita();
       } } = this.props;
 
     const { sliderValues } = this.state;
+
+    const formatTheColor = () => {
+      if ({ sliderValues } *40000 >= {peozbalance}){
+        document.getElementById("peos").style.color = "red";
+      }
+      else {
+        document.getElementById("peos").style.color = "green";
+      }
+    };
+
     return (
       <div>
 
@@ -608,15 +618,15 @@ this.lita();
         <br></br>
         You need to transfer:
         <br></br>
-        {sliderValues[0]*400} PEOS tokens.
+        {sliderValues[0]*40000} PEOS tokens. <small id="peos" style={{"color":"black"}}>(You have: {(peozbalance)}.)</small>
         <br></br>
-        {sliderValues[0]*200} LIQUIDAPP tokens.
+        {sliderValues[0]*200} LIQUIDAPP tokens. (You have: {(dabbbalance)}.)
         <br></br>
-        {sliderValues[0]*1000} VIGOR tokens.
+        {sliderValues[0]*1000} VIGOR tokens. (You have:  {(vikbalance)}.)
         <br></br>
-        {sliderValues[0]*1000} EDNA tokens.
+        {sliderValues[0]*1000} EDNA tokens. (You have: {(etnabalance)}.)
         <br></br>
-        {sliderValues[0]*100} IQ tokens.
+        {sliderValues[0]*100} IQ tokens. (You have: {(ikqbalance)}.)
         </div>
         {(name)}{(etfbalance)}, {(peozbalance)}, {(ikqbalance)}, {(etnabalance)}, {(vikbalance)}, {(dabbbalance)}
         <br></br>
